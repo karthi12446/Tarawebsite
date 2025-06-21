@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Order Summary – My Shop</title><link rel="stylesheet" href="style.css">
+  <script src="scripts/gsap.min.js"></script><script src="scripts/main.js" defer></script>
+</head><body>
+<main class="container animate-on-load">
+  <h1>Your Order</h1>
+  <div class="card">
+    <h2>Order #12345</h2>
+    <p>1× Product A – ₹1,200</p>
+    <p>Qty: 2</p>
+    <p><strong>Total:</strong> ₹2,400</p>
+    <button id="confirmBtn">Confirm & Pay</button>
+  </div>
+</main>
+
+<script>
+document.getElementById('confirmBtn').addEventListener('click', () => {
+  gsap.to('main', { opacity: 0, y: -30, duration: 0.6 });
+  setTimeout(() => {
+    document.body.innerHTML = '<main class="container"><h1>Payment Successful!</h1><p>Thank you for your purchase.</p></main>';
+    gsap.from('main', { opacity: 0, y: 20, duration: 0.6 });
+  }, 600);
+  // TODO: integrate real payment gateway
+});
+</script>
+</body></html>

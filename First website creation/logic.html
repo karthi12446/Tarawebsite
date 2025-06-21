@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login – My Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/gsap.min.js"></script>
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <h1 class="animate-on-load">Login to Your Account</h1>
+  <form id="loginForm" class="animate-on-load" aria-label="Login Form">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="••••••" required>
+    <button type="submit">Sign In</button>
+  </form>
+</main>
+
+<script>
+const form = document.getElementById('loginForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  gsap.to(form, { opacity: 0, y: -20, duration: 0.5 });
+  gsap.fromTo(document.body, { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.6 });
+  // TODO: add actual authentication here
+});
+</script>
+</body>
+</html>

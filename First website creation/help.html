@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Help – My Shop</title><link rel="stylesheet" href="style.css">
+  <script src="scripts/gsap.min.js"></script><script src="scripts/main.js" defer></script>
+</head>
+<body>
+<main class="container">
+  <h1 class="animate-on-load">Help & FAQ</h1>
+  <section class="animate-on-load">
+    <h2>Frequently Asked Questions</h2>
+    <div class="card">
+      <h3>How do I place an order?</h3>
+      <p>Browse products, add to cart, and follow checkout steps.</p>
+    </div>
+    <!-- Add more questions similarly -->
+  </section>
+  <section id="contactSection" class="animate-on-load">
+    <h2>Contact Us</h2>
+    <form id="contactForm" aria-label="Contact Form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="How can we help?" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  gsap.to('#contactForm', { y:10, duration:0.2, yoyo:true, repeat:1 });
+  // TODO: send actual message
+});
+</script>
+</body>
+</html>
